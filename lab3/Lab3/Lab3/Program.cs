@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 namespace Lab3
 {
     class Program
@@ -9,7 +9,7 @@ namespace Lab3
             
             Random myRnd = new Random();
             int[] array = new int[10];
-
+            List<int> newArray = new List<int>();
             Randomaser randomaser = new Randomaser();
 
             Console.WriteLine("Исходный массив:");     
@@ -19,15 +19,21 @@ namespace Lab3
                 Console.Write(array[i] + " ");
             }
 
-            array = randomaser.random(array);
+            newArray = randomaser.FindEven(array);
 
             Console.WriteLine("\nРезультат:");
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < newArray.Count; i++)
             {
-                Console.Write(array[i] + " ");
+                Console.Write(newArray[i] + " ");
             }
 
-            
+            newArray = randomaser.FindOdd(array);
+
+            Console.WriteLine("\nРезультат:");
+            for (int i = 0; i < newArray.Count; i++)
+            {
+                Console.Write(newArray[i] + " ");
+            }
 
             Console.ReadKey();
         }
